@@ -4,7 +4,9 @@
 
 **If you have any questions or issues, feel free to file an [issue](https://github.com/MeldCX/aopen_openpay/issues)**
 
-The Openpay payment gateway is a payment method for Magento2+ stores that allows the customer to purchase items through a series of installments.
+The Openpay payment gateway is a payment method for Magento2+ stores that allows the customer to purchase items through a series of 
+
+ments.
 
 **Note:** This is a beta release and we are still working on plugin improvements.
 
@@ -45,8 +47,8 @@ Contact [www.openpay.com.au](http://www.openpay.com.au) for info on creating an 
 
 There are two ways in which you can install the plugin:
 
-* [manual installation][2.1] by copying and pasting folders from the repository
-* [Magento Connect installation][2.2] from the administration page
+* [Manual installation][2.1] by downloading the repository copying and pasting folders into the magento installation
+* [Composer Intallation][2.2]
 
 See the sections below to find out about steps for each of the procedures.
 
