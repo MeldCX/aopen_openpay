@@ -112,7 +112,7 @@ If module was installed manually remove all installed files and then disable the
 ```
 magento module:disable Aopen_Openpay
 ```
-. If module was installed using composer run:
+If module was installed using composer run:
 ```
 magento module:disable Aopen_Openpay
 composer remove aopen/openpay
