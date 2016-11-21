@@ -1,0 +1,1 @@
+The Openpay payment gateway is a payment method for Magento stores that allows the customer to purchase items through a series of installments.

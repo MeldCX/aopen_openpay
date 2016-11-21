@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <openpay>
+                <active>1</active>
+                <model>Aopen\Openpay\Model\Openpay</model>
+                <title>Openpay Payment Method</title>
+                <test>1</test>
+                <allowspecific>1</allowspecific>
+                <specificcountry>AU</specificcountry>
+                <min_order_total>100</min_order_total>
+            </openpay>
+        </payment>
+    </default>
+</config>
