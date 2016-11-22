@@ -71,7 +71,7 @@ composer require aopen/openpay
 ### Enabling Openpay Payment Gateway
 
 ```
-php -f bin/magento module:enable --clear-static-content Oliverbode_Storelocator
+php -f bin/magento module:enable --clear-static-content Aopen_Openpay
 php -f bin/magento setup:upgrade
 ```
   
