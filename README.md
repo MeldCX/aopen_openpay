@@ -110,11 +110,11 @@ The main parameters for plugin configuration are as follows:
 ### Uninstallation
 If module was installed manually remove all installed files and then disable the module:
 ```
-magento module:disable Aopen_Openpay
+php -f bin/magento module:disable Aopen_Openpay
 ```
 If module was installed using composer run:
 ```
-magento module:disable Aopen_Openpay
+php -f bin/magento module:disable Aopen_Openpay
 composer remove aopen/openpay
 ```
 
