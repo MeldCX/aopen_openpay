@@ -33,7 +33,7 @@ define(
                             function () {
                                 if (self.redirectAfterPlaceOrder) {
                                     if (!location.origin) location.origin = location.protocol + "//" + location.host;
-                                    window.location.replace(location.origin + 'openpay/handoverurl/index');
+                                    window.location.replace(location.origin + '/openpay/handoverurl/index');
                                     return false;
                                 }
                             }
