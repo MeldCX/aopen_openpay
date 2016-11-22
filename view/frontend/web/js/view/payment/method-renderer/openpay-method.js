@@ -32,8 +32,9 @@ define(
                         ).done(
                             function () {
                                 if (self.redirectAfterPlaceOrder) {
-                                     window.location.replace('http://magento2.com/openpay/handoverurl/index');
-                                     return false;
+                                    if (!location.origin) location.origin = location.protocol + "//" + location.host;
+                                    window.location.replace(location.origin + 'openpay/handoverurl/index');
+                                    return false;
                                 }
                             }
                         );
