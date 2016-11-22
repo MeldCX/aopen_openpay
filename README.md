@@ -119,7 +119,7 @@ composer remove aopen/openpay
 ```
 
 Configuration data is stored in the table: core_config_data and can be removed with the command: DELETE FROM core_config_data WHERE path LIKE '%openpay%'; The module also adds a custom status. This can be removed using the following commands. DELETE FROM sales_order_status WHERE label = 'Pending Openpay Approval'; DELETE FROM sales_order_status_state WHERE status = 'pending_approval';
-To remove the module from the core resource table issue the following command: DELETE FROM setup_module WHERE module = 'Aopen_Openpay';
+To remove the module from the setup_module table issue the following command: DELETE FROM setup_module WHERE module = 'Aopen_Openpay';
 
 ## Usage
 Customer Orders
