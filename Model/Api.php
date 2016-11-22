@@ -91,9 +91,16 @@ class Api extends \Magento\Framework\Model\AbstractModel
         else return $result['url'];
     }
 
-    public function onlineOrderReduction($planId,$newPurchasePrice) {
-        $newPurchasePrice = number_format($newPurchasePrice, 2);
-        $result = $this->_getResource()->onlineOrderReduction($planId,$newPurchasePrice);
+    public function onlineOrderReduction($planId,$newPurchasePrice,$adjustmentNegative) {
+        if ($adjustmentNegative > 0) {
+            $newPurchasePrice = number_format(($newPurchasePrice), 2);
+            $adjustmentNegative = number_format(($adjustmentNegative), 2);
+        }
+        else {
+            $newPurchasePrice = number_format($newPurchasePrice, 2);
+            $adjustmentNegative = 0;
+        }
+        $result = $this->_getResource()->onlineOrderReduction($planId,$newPurchasePrice,$adjustmentNegative);
         return $result;
     } 
 

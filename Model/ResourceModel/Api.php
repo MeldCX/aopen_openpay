@@ -89,9 +89,17 @@ class Api extends \Aopen\Openpay\Model\ResourceModel\AbstractApi
         return $result;
     }
 
-    public function onlineOrderReduction($planId,$newPurchasePrice) {
+    public function onlineOrderReduction($planId,$newPurchasePrice,$adjustmentNegative) {
         $path = array('OnlineOrderReduction');
-        $data = $this->createXmlPayload($path[0],'',$planId,$newPurchasePrice);
+        if ($adjustmentNegative) {
+            $reducePriceBy = $adjustmentNegative;
+            $fullRefund = 'false';
+        }
+        else {
+            $reducePriceBy = '0.00';
+            $fullRefund = 'true';
+        }
+        $data = $this->createXmlPayload($path[0],'',$planId,$newPurchasePrice,$reducePriceBy,$fullRefund);
         $result = $this->makeRestCall(\Zend_Http_Client::POST, $path, $data);
         return $this->result($result);
     }

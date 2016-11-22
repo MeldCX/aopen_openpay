@@ -107,10 +107,6 @@ class Save extends \Magento\Sales\Controller\Adminhtml\Order\Creditmemo\Save
                 }
                 $order = $creditmemo->getOrder();
 
-
-
-
-
                 $paymentMethod = $order->getPayment()->getMethodInstance()->getCode();
                 $transaction = $this->getTransaction->getCollection()
                     ->addFieldToSelect('txn_id')
@@ -118,7 +114,7 @@ class Save extends \Magento\Sales\Controller\Adminhtml\Order\Creditmemo\Save
                     ->addFieldToFilter('txn_type', \Magento\Sales\Model\Order\Payment\Transaction::TYPE_CAPTURE)
                     ->getFirstItem();
                 if ($paymentMethod == 'openpay' && $transaction->getTxnId() && !$data['do_offline']) {
-                    $return = $this->openpayModel->onlineOrderReduction($transaction->getTxnId(),$creditmemo->getGrandTotal());
+                    $return = $this->openpayModel->onlineOrderReduction($transaction->getTxnId(),$data['adjustment_negative'],$creditmemo->getGrandTotal());
                     if (isset($return['success'])) {
                         $creditmemoManagement = $this->_objectManager->create(
                             'Magento\Sales\Api\CreditmemoManagementInterface'
