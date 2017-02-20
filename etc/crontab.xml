@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default"> 
+        <job name="openpay_cancel_pending" instance="Aopen\Openpay\Cron\Cancelpending" method="execute">
+            <schedule>*/5 * * * *</schedule> <!-- run every 5 minutes -->
+        </job>
+    </group>
+</config>

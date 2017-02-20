@@ -36,12 +36,21 @@
                 <field id="min_order_total" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Minimum Order Total</label>
                 </field>
-                <field id="debug" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                <field id="cancel_pending" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Automatically Cancel Openpay Pending Orders</label>
+                    <comment><![CDATA[If set to yes, magento's internal cron will cancel all Openpay Pending Orders older than x hours set below.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cancel_pending_frequency" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Frequency</label>
+                    <source_model>Aopen\Openpay\Model\Form</source_model>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label>Debug</label>
                     <comment><![CDATA[Switch on debugging to create a log file located at "var/log/openpay.log" which you can view <a href="/openpay/log/index" target="_blank">here</a>]]></comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="sort_order" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="sort_order" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Sort Order</label>
                 </field>
             </group>
